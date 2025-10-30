@@ -35,20 +35,20 @@ export function FaqSection() {
   ]
 
   return (
-    <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-white">
+    <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-background">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#1E1F22] mb-16 text-balance">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-16 text-balance">
           Perguntas Que Nossos Clientes Fazem{" "}
-          <span className="text-[#1141FF] font-extrabold">(Antes de Multiplicar Resultados)</span>
+          <span className="text-primary font-extrabold">(Antes de Multiplicar Resultados)</span>
         </h2>
 
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-[#F8F9FB] rounded-2xl px-6 border-none">
-              <AccordionTrigger className="text-left text-lg md:text-xl font-semibold text-[#1E1F22] hover:text-[#1141FF] py-6">
+            <AccordionItem key={index} value={`item-${index}`} className="bg-muted rounded-2xl px-6 border-none">
+              <AccordionTrigger className="text-left text-lg md:text-xl font-semibold text-foreground hover:text-primary py-6">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-[#3B3D41] text-base md:text-lg leading-relaxed pb-6">
+              <AccordionContent className="text-muted-foreground text-base md:text-lg leading-relaxed pb-6">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

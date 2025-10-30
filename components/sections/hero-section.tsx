@@ -9,10 +9,10 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center bg-white px-6 md:px-12 lg:px-24 py-20">
+    <section className="relative min-h-screen flex items-center bg-background px-6 md:px-12 lg:px-24 py-20">
       <div className="max-w-7xl mx-auto w-full">
         {/* Microstrap */}
-        <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.1em] text-[#6E727A] mb-12 font-medium">
+        <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.1em] text-muted-foreground mb-12 font-medium">
           <span>Estrutura Comercial</span>
           <span>•</span>
           <span>Processos de Vendas</span>
@@ -22,19 +22,19 @@ export function HeroSection() {
 
         {/* Headline */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 max-w-5xl text-balance">
-          <span className="text-[#1E1F22]">Marketing Sem Vendas É </span>
-          <span className="text-[#1141FF] font-extrabold">Desperdício</span>
-          <span className="text-[#1141FF]">.</span>
+          <span className="text-foreground">Marketing Sem Vendas É </span>
+          <span className="text-primary font-extrabold">Desperdício</span>
+          <span className="text-primary">.</span>
           <br />
-          <span className="text-[#1E1F22]">Vendas Sem Marketing É </span>
-          <span className="text-[#1141FF] font-extrabold">Lentidão</span>
-          <span className="text-[#1141FF]">.</span>
+          <span className="text-foreground">Vendas Sem Marketing É </span>
+          <span className="text-primary font-extrabold">Lentidão</span>
+          <span className="text-primary">.</span>
         </h1>
 
         <GradientRule className="mb-6" />
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl text-[#3B3D41] leading-relaxed max-w-2xl mb-8 text-pretty">
+        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-8 text-pretty">
           Nós entregamos os dois — na ordem certa. Primeiro construímos a estrutura comercial que converte. Depois
           amplificamos com marketing. É assim que empresas crescem sem desperdiçar recursos.
         </p>
@@ -48,11 +48,11 @@ export function HeroSection() {
         </div>
 
         {/* Trust Signal */}
-        <div className="text-sm text-[#6E727A]">
+        <div className="text-sm text-muted-foreground">
           <p className="font-medium">
-            Confiado por empresas como <span className="text-[#1E1F22] font-semibold">Empresa A</span>,
-            <span className="text-[#1E1F22] font-semibold"> Empresa B</span> e mais
-            <span className="text-[#1E1F22] font-semibold"> 47 empresas</span>
+            Confiado por empresas como <span className="text-foreground font-semibold">Empresa A</span>,
+            <span className="text-foreground font-semibold"> Empresa B</span> e mais
+            <span className="text-foreground font-semibold"> 47 empresas</span>
           </p>
         </div>
       </div>

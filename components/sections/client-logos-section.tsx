@@ -12,26 +12,26 @@ export function ClientLogosSection() {
   ]
 
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-[#F8F9FB]">
+    <section className="py-20 px-6 md:px-12 lg:px-24 bg-muted">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#1E1F22] mb-12 text-balance">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12 text-balance">
           Empresas Que Pararam de Desperdiçar e Começaram a{" "}
-          <span className="text-[#1141FF] font-extrabold">Crescer</span>
+          <span className="text-primary font-extrabold">Crescer</span>
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {clients.map((client, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 flex items-center justify-center h-32 grayscale hover:grayscale-0 transition-all duration-300"
+              className="bg-card rounded-2xl p-8 flex items-center justify-center h-32 grayscale hover:grayscale-0 transition-all duration-300"
             >
-              <span className="text-[#6E727A] font-semibold text-lg">{client}</span>
+              <span className="text-muted-foreground font-semibold text-lg">{client}</span>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-[#6E727A] text-lg">
-          Mais de <span className="text-[#1E1F22] font-bold">50 empresas</span> já construíram crescimento sustentável
+        <p className="text-center text-muted-foreground text-lg">
+          Mais de <span className="text-foreground font-bold">50 empresas</span> já construíram crescimento sustentável
           com a Tryum
         </p>
       </div>

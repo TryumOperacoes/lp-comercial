@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -23,10 +24,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${manrope.variable} font-sans antialiased`}>
-        {children}
-        <Analytics />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

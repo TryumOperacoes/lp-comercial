@@ -3,7 +3,7 @@ import { X, Check } from "lucide-react"
 
 export function FinalCtaSection() {
   return (
-    <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-[#1141FF] text-white">
+    <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-balance">
           Duas Escolhas. Dois Futuros Diferentes.
@@ -11,7 +11,7 @@ export function FinalCtaSection() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {/* Continuar Como Está */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8">
+          <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-3xl p-8">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <X className="w-6 h-6" />
               Continuar Como Está
@@ -41,30 +41,30 @@ export function FinalCtaSection() {
           </div>
 
           {/* Construir a Fundação */}
-          <div className="bg-white text-[#1E1F22] rounded-3xl p-8 shadow-2xl">
+          <div className="bg-card text-foreground rounded-3xl p-8 shadow-2xl">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <Check className="w-6 h-6 text-[#1141FF]" />
+              <Check className="w-6 h-6 text-primary" />
               Construir a Fundação Primeiro
             </h3>
             <ul className="space-y-4 text-lg">
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-[#1141FF]" />
+                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-primary" />
                 <span>Estrutura comercial sólida</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-[#1141FF]" />
+                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-primary" />
                 <span>Processos que convertem</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-[#1141FF]" />
+                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-primary" />
                 <span>Time alinhado e produtivo</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-[#1141FF]" />
+                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-primary" />
                 <span>Marketing que multiplica (não desperdiça)</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-[#1141FF]" />
+                <Check className="w-5 h-5 flex-shrink-0 mt-1 text-primary" />
                 <span>Crescimento sustentável e previsível</span>
               </li>
             </ul>

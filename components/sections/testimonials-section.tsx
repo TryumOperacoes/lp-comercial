@@ -29,22 +29,22 @@ export function TestimonialsSection() {
   ]
 
   return (
-    <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-white">
+    <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-background">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#1E1F22] mb-16 text-balance">
-          O Que Acontece Quando Você Constrói a <span className="text-[#1141FF] font-extrabold">Fundação Primeiro</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-16 text-balance">
+          O Que Acontece Quando Você Constrói a <span className="text-primary font-extrabold">Fundação Primeiro</span>
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-[#F8F9FB] rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300">
-              <Quote className="w-10 h-10 text-[#1141FF] mb-6" />
-              <p className="text-lg text-[#3B3D41] leading-relaxed mb-6">"{testimonial.quote}"</p>
-              <div className="border-t border-[#AEB3BD]/30 pt-6">
-                <p className="font-bold text-[#1E1F22] text-lg">{testimonial.author}</p>
-                <p className="text-[#6E727A]">{testimonial.role}</p>
-                <p className="text-[#1141FF] font-semibold">{testimonial.company}</p>
-                <p className="text-sm text-[#6E727A] mt-1">Setor: {testimonial.sector}</p>
+            <div key={index} className="bg-muted rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300">
+              <Quote className="w-10 h-10 text-primary mb-6" />
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">"{testimonial.quote}"</p>
+              <div className="border-t border-border/30 pt-6">
+                <p className="font-bold text-foreground text-lg">{testimonial.author}</p>
+                <p className="text-muted-foreground">{testimonial.role}</p>
+                <p className="text-primary font-semibold">{testimonial.company}</p>
+                <p className="text-sm text-muted-foreground mt-1">Setor: {testimonial.sector}</p>
               </div>
             </div>
           ))}
@@ -53,18 +53,18 @@ export function TestimonialsSection() {
         {/* Estatísticas */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 text-center">
           <div>
-            <p className="text-4xl font-extrabold text-[#1141FF]">⭐ 4.9/5</p>
-            <p className="text-[#6E727A]">Avaliação Média</p>
+            <p className="text-4xl font-extrabold text-primary">⭐ 4.9/5</p>
+            <p className="text-muted-foreground">Avaliação Média</p>
           </div>
-          <div className="hidden md:block w-px h-12 bg-[#AEB3BD]" />
+          <div className="hidden md:block w-px h-12 bg-border" />
           <div>
-            <p className="text-4xl font-extrabold text-[#1141FF]">📈 156%</p>
-            <p className="text-[#6E727A]">Aumento Médio em Conversão</p>
+            <p className="text-4xl font-extrabold text-primary">📈 156%</p>
+            <p className="text-muted-foreground">Aumento Médio em Conversão</p>
           </div>
-          <div className="hidden md:block w-px h-12 bg-[#AEB3BD]" />
+          <div className="hidden md:block w-px h-12 bg-border" />
           <div>
-            <p className="text-4xl font-extrabold text-[#1141FF]">🎯 92%</p>
-            <p className="text-[#6E727A]">Taxa de Retenção de Clientes</p>
+            <p className="text-4xl font-extrabold text-primary">🎯 92%</p>
+            <p className="text-muted-foreground">Taxa de Retenção de Clientes</p>
           </div>
         </div>
       </div>
