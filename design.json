@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "brand": "Tryum",
+    "format": "design-system-json",
+    "version": "1.0",
+    "language": "pt-BR",
+    "notes": "Este JSON descreve estilo visual e regras de composição para reproduzir peças com tipografia grande, alto contraste e uso de azul elétrico. Evita texto específico das imagens; use placeholders."
+  },
+  "foundations": {
+    "colors": {
+      "brand": {
+        "blue": "#1141FF",
+        "blue-900": "#0E34CC",
+        "blue-100": "#E6ECFF"
+      },
+      "neutral": {
+        "black": "#0B0B0D",
+        "gray-900": "#1E1F22",
+        "gray-700": "#3B3D41",
+        "gray-500": "#6E727A",
+        "gray-300": "#AEB3BD",
+        "white": "#FFFFFF"
+      },
+      "usage": {
+        "bg-primary": "{colors.neutral.white}",
+        "bg-inverse": "{colors.brand.blue}",
+        "text-strong": "{colors.neutral.gray-900}",
+        "text-regular": "{colors.neutral.gray-700}",
+        "text-inverse": "{colors.neutral.white}",
+        "accent": "{colors.brand.blue}",
+        "rule-gradient-start": "{colors.brand.blue}",
+        "rule-gradient-end": "transparent"
+      }
+    },
+    "gradients": {
+      "accent-fade-horizontal": {
+        "type": "linear",
+        "angle": 0,
+        "stops": [
+          { "color": "{colors.brand.blue}", "pos": 0 },
+          { "color": "rgba(17,65,255,0.12)", "pos": 0.6 },
+          { "color": "transparent", "pos": 1 }
+        ]
+      }
+    },
+    "typography": {
+      "families": {
+        "primary": "Manrope, Plus Jakarta Sans, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif",
+        "alt": "Satoshi, SF Pro Rounded, Nunito, system-ui, sans-serif"
+      },
+      "scale": {
+        "display-xxl": { "size": 112, "line": 100, "tracking": -1.5 },
+        "display-xl": { "size": 88,  "line": 84,  "tracking": -1.2 },
+        "display-lg": { "size": 72,  "line": 68,  "tracking": -1.1 },
+        "display-md": { "size": 56,  "line": 54,  "tracking": -1.0 },
+        "headline":   { "size": 44,  "line": 44,  "tracking": -0.8 },
+        "title":      { "size": 32,  "line": 36,  "tracking": -0.4 },
+        "body-lg":    { "size": 20,  "line": 30,  "tracking": -0.1 },
+        "body":       { "size": 16,  "line": 24,  "tracking": 0 },
+        "caption":    { "size": 12,  "line": 16,  "tracking": 0.8 },
+        "microcaps":  { "size": 11,  "line": 14,  "tracking": 1.2, "transform": "uppercase" }
+      },
+      "weights": {
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "extrabold": 800
+      },
+      "emphasis": {
+        "primary-color": "{colors.brand.blue}",
+        "primary-weight": "extrabold",
+        "secondary-style": "italic: false",
+        "dot-color": "{colors.brand.blue}"
+      }
+    },
+    "radii": {
+      "none": 0,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "pill": 999
+    },
+    "spacing": {
+      "base": 8,
+      "steps": [4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 128]
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": 24,
+      "margins": { "desktop": 96, "tablet": 64, "mobile": 24 },
+      "maxWidth": 1200,
+      "contentAlign": "left"
+    },
+    "iconography": {
+      "style": "geométrico, cantos e terminais arredondados",
+      "stroke": 2,
+      "arrow": {
+        "type": "upright",
+        "angle": 45,
+        "terminal": "round",
+        "thickness": 2.5,
+        "curve": 0
+      }
+    },
+    "shadows": {
+      "none": "none",
+      "soft": "0 6px 18px rgba(0,0,0,0.08)"
+    }
+  },
+  "logoSystem": {
+    "mark": {
+      "description": "Símbolo formado por três faixas arredondadas contínuas que orbitam um triângulo negativo central. Cada faixa tem cortes diagonais que sugerem movimento.",
+      "construction": {
+        "ratio": "1:1",
+        "strokeToSize": 0.14,
+        "cornerRadius": 0.24,
+        "outerAngles": 60,
+        "shear": 12,
+        "gapBetweenRibbons": 0.08,
+        "negativeCoreShape": "triângulo de cantos arredondados"
+      },
+      "coloring": {
+        "primary": "{colors.neutral.white}",
+        "onPrimaryBackground": "{colors.brand.blue}",
+        "onLight": "{colors.brand.blue}",
+        "mono": "{colors.neutral.black}"
+      },
+      "clearspace": {
+        "unit": "X = largura da faixa",
+        "top": "1.0X",
+        "right": "1.0X",
+        "bottom": "1.0X",
+        "left": "1.0X"
+      },
+      "minSizes": { "print-mm": 10, "screen-px": 24 }
+    },
+    "wordmark": {
+      "style": "sans geométrica arredondada",
+      "weight": "bold",
+      "case": "Title Case",
+      "tracking": -0.8,
+      "customKernPairs": [["T","r",-40], ["y","u",-10], ["u","m",-10]],
+      "color": "{colors.neutral.black}",
+      "alternateColor": "{colors.brand.blue}",
+      "safeAreaToMark": "altura do X do logotipo",
+      "lockups": {
+        "horizontal": {
+          "gap": 16,
+          "align": "middle",
+          "recommended": true
+        },
+        "stacked": {
+          "gap": 8,
+          "align": "center",
+          "recommended": false
+        }
+      },
+      "tagline": {
+        "enabled": true,
+        "font": "Manrope",
+        "size": 14,
+        "weight": "medium",
+        "tracking": 80,
+        "case": "lowercase",
+        "offsetY": 4,
+        "align": "right"
+      }
+    },
+    "placements": {
+      "slide": { "topRight": true, "offset": { "x": 40, "y": 40 }, "size": "48px" },
+      "poster": { "topRight": true, "offset": { "x": 48, "y": 48 }, "size": "56px" }
+    }
+  },
+  "components": {
+    "microstrap": {
+      "role": "linha superior discreta com três itens separados por pontos",
+      "font": "Manrope",
+      "style": "microcaps",
+      "color": "{colors.neutral.gray-500}",
+      "tracking": 100,
+      "separator": "•",
+      "marginTop": 48
+    },
+    "headlineBlock": {
+      "structure": [
+        { "token": "headline-part-1", "weight": "bold", "color": "{colors.neutral.gray-900}" },
+        { "token": "headline-part-2", "weight": "extrabold", "color": "{colors.brand.blue}" }
+      ],
+      "sizes": { "desktop": "display-xl", "tablet": "display-lg", "mobile": "display-md" },
+      "lineBreakStrategy": "quebras manuais para formar colunas altas",
+      "punctuationDotColor": "{colors.brand.blue}"
+    },
+    "supportingText": {
+      "font": "Manrope",
+      "size": "body-lg",
+      "weight": "regular",
+      "color": "{colors.neutral.gray-700}",
+      "maxWidth": 520
+    },
+    "gradientRule": {
+      "height": 4,
+      "width": "40%",
+      "radius": 2,
+      "gradient": "accent-fade-horizontal",
+      "marginY": 24
+    },
+    "cta": {
+      "type": "button",
+      "shape": "pill",
+      "height": 40,
+      "paddingX": 20,
+      "bg": "{colors.brand.blue}",
+      "color": "{colors.neutral.white}",
+      "fontWeight": "semibold",
+      "icon": { "name": "arrow-up-right", "size": 16, "position": "inside-right", "gap": 10 },
+      "hover": { "bg": "{colors.brand.blue-900}" },
+      "focus": { "outline": "2px solid rgba(17,65,255,0.3)" }
+    },
+    "bulletList": {
+      "marker": "seta simples",
+      "markerColor": "{colors.neutral.gray-900}",
+      "gap": 12,
+      "itemStyle": { "font": "Manrope", "size": "title", "weight": "regular" }
+    },
+    "arrowGlyph": {
+      "size": 18,
+      "stroke": 2.5,
+      "corner": "round",
+      "rotation": 0
+    }
+  },
+  "layouts": {
+    "slide-hero-light": {
+      "background": "{colors.neutral.white}",
+      "logo": { "position": "top-right", "size": 48 },
+      "microstrap": { "position": "top-left" },
+      "headline": { "align": "left", "width": "72%", "marginTop": 96 },
+      "gradientRule": "below-headline",
+      "supportingText": { "marginTop": 24, "align": "left" },
+      "cta": { "align": "left", "marginTop": 24 },
+      "footerMeta": { "align": "left", "style": "microcaps", "marginBottom": 32 }
+    },
+    "slide-hero-blue": {
+      "background": "{colors.brand.blue}",
+      "textColor": "{colors.neutral.white}",
+      "headline": { "colorDefault": "{colors.neutral.white}", "accentColor": "{colors.neutral.white}", "weightMix": ["bold","extrabold"] },
+      "microstrap": { "color": "rgba(255,255,255,0.7)" },
+      "supportingText": { "color": "rgba(255,255,255,0.86)" },
+      "cta": { "bg": "{colors.neutral.white}", "color": "{colors.neutral.gray-900}" }
+    },
+    "slide-contrast-left": {
+      "background": "{colors.neutral.white}",
+      "headline": { "mixColors": ["{colors.neutral.gray-900}", "{colors.brand.blue}"] },
+      "bulletList": { "enabled": true, "side": "left", "markerColor": "{colors.neutral.gray-900}" }
+    },
+    "poster-type-dominant": {
+      "background": "{colors.brand.blue}",
+      "composition": "tipografia ocupa metade superior, contraste alto",
+      "safeMargins": 96,
+      "footer": { "meta": true }
+    },
+    "logo-lockup-page": {
+      "background": "{colors.neutral.white}",
+      "centeredLockup": true,
+      "gradientRule": { "width": "48%" },
+      "cta": { "align": "left" }
+    }
+  },
+  "tokens": {
+    "emphasisWord": {
+      "color": "{colors.brand.blue}",
+      "weight": "extrabold"
+    },
+    "periodAccent": {
+      "enabled": true,
+      "color": "{colors.brand.blue}"
+    },
+    "spaceTight": -4,
+    "spaceNormal": 0,
+    "spaceLoose": 8
+  },
+  "accessibility": {
+    "minContrast": "WCAG AA",
+    "combinations": [
+      { "fg": "{colors.neutral.white}", "bg": "{colors.brand.blue}" },
+      { "fg": "{colors.neutral.gray-900}", "bg": "{colors.neutral.white}" }
+    ],
+    "hitAreaMin": 44,
+    "focusVisible": true
+  },
+  "motion": {
+    "defaults": {
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "durationMs": 220
+    },
+    "entrances": {
+      "headline": { "type": "fade-up", "distance": 12, "delayMs": 40 },
+      "rule": { "type": "wipe-x", "from": "left" },
+      "cta": { "type": "pop" }
+    }
+  },
+  "rules": {
+    "do": [
+      "Usar grandes blocos de tipografia com fortes quebras de linha.",
+      "Colorir palavras-chave com o azul da marca.",
+      "Aplicar a barra/linha com gradiente logo abaixo do título quando houver CTA.",
+      "Manter amplas áreas em branco; alinhar conteúdo à esquerda."
+    ],
+    "dont": [
+      "Não usar sombras pesadas nem bordas duras.",
+      "Não centralizar títulos longos.",
+      "Não utilizar múltiplas cores de ênfase no mesmo bloco.",
+      "Não distorcer o símbolo; respeitar proporções e espaçamentos."
+    ]
+  },
+  "placeholders": {
+    "headline": "{{TÍTULO PRINCIPAL}}",
+    "headlineAccent": "{{PALAVRA DE ÊNFASE}}",
+    "supporting": "{{TEXTO DE APOIO}}",
+    "list": ["{{ITEM_1}}", "{{ITEM_2}}", "{{ITEM_3}}", "{{ITEM_4}}"],
+    "cta": "{{CHAMADA_PARA_AÇÃO}}"
+  },
+  "exportPresets": {
+    "slides": [
+      { "name": "A4-Vertical", "size": [2480, 3508], "dpi": 300, "bleed": 0 },
+      { "name": "1080x1350-Feed", "size": [1080, 1350], "dpi": 96, "bleed": 0 },
+      { "name": "1080x1920-Story", "size": [1080, 1920], "dpi": 96, "bleed": 0 }
+    ],
+    "logo": [
+      { "name": "Mark-Primary-RGB", "background": "{colors.brand.blue}", "safePadding": 64, "size": 1024 },
+      { "name": "Mark-Mono-Black-RGB", "background": "{colors.neutral.white}", "safePadding": 64, "size": 1024 }
+    ]
+  },
+  "recipes": {
+    "makeSlideHeroLight": [
+      "apply layout: slide-hero-light",
+      "place logo (top-right)",
+      "render microstrap",
+      "render headlineBlock com placeholders",
+      "render gradientRule",
+      "render supportingText",
+      "render cta"
+    ],
+    "makeSlideHeroBlue": [
+      "apply layout: slide-hero-blue",
+      "render headlineBlock (cores invertidas conforme layout)",
+      "render supportingText",
+      "render cta inverso"
+    ],
+    "makeListSlide": [
+      "apply layout: slide-contrast-left",
+      "headlineBlock com ênfase azul",
+      "bulletList com 3–4 itens"
+    ]
+  }
+}
