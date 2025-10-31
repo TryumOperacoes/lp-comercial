@@ -1,3 +1,4 @@
+import { CtaButton } from "@/components/ui/cta-button"
 import { Building2, Settings, Rocket } from "lucide-react"
 
 export function SolutionSection() {
@@ -92,6 +93,16 @@ export function SolutionSection() {
               </div>
             )
           })}
+        </div>
+        {/* Frase de Impacto */}
+        <div className="text-center mb-12">
+          <p className="text-3xl md:text-5xl font-extrabold text-foreground mb-2">Construa. Otimize. Amplifique.</p>
+          <p className="text-2xl md:text-4xl font-bold text-primary">Nessa ordem. Sempre.</p>
+        </div>
+
+        {/* CTA */}
+        <div className="flex justify-center">
+          <CtaButton size="lg">Quero Construir Minha Fundação Comercial</CtaButton>
         </div>
       </div>
     </section>
