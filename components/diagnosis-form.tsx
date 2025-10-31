@@ -86,17 +86,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         source: 'landing_page_diagnosis_popup',
       }
 
-      // Send to webhook (replace with your actual webhook URL)
-      const webhookUrl = process.env.NEXT_PUBLIC_DIAGNOSIS_WEBHOOK_URL || 'https://your-webhook-url.com/diagnosis'
-
-      // Only send if webhook URL is configured and not the placeholder
-      if (!webhookUrl || webhookUrl === 'https://your-webhook-url.com/diagnosis') {
-        console.log('Webhook URL not configured, skipping submission. Payload:', payload)
-        // Simulate success for development/testing
-        return
-      }
-
-      const response = await fetch(webhookUrl, {
+      const response = await fetch('/api/diagnosis', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,7 +95,9 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
       })
 
       if (!response.ok) {
-        throw new Error('Erro ao enviar formulário')
+        const errorBody = await response.json().catch(() => null)
+        const message = errorBody?.error ?? 'Erro ao enviar formulário'
+        throw new Error(message)
       }
 
       // Track form submission in GTM
