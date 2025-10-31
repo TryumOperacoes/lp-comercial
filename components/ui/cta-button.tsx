@@ -20,7 +20,7 @@ export function CtaButton({
   className = "",
   onClick,
 }: CtaButtonProps) {
-  const baseClasses = "rounded-full font-semibold transition-all duration-200"
+  const baseClasses = "rounded-full font-semibold transition-all duration-200 whitespace-normal break-words text-center"
 
   const variantClasses = {
     primary: "bg-[#1141FF] text-white hover:bg-[#0E34CC] shadow-lg hover:shadow-xl",

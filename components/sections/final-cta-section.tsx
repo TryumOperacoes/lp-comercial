@@ -77,7 +77,7 @@ export function FinalCtaSection() {
             Você decide: continuar jogando dinheiro fora ou construir crescimento de verdade.
           </p>
 
-          <CtaButton variant="secondary" size="lg" className="mb-4">
+          <CtaButton variant="secondary" size="lg" className="mb-4 w-full max-w-sm text-base sm:w-auto sm:max-w-none">
             Escolho Crescer de Verdade — Quero Minha Avaliação Gratuita
           </CtaButton>
 

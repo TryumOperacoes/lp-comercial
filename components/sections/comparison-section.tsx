@@ -99,7 +99,9 @@ export function ComparisonSection() {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <CtaButton size="lg">Quero Multiplicar Meu ROI Assim Também</CtaButton>
+          <CtaButton size="lg" className="w-full max-w-sm text-base sm:w-auto sm:max-w-none">
+            Quero Multiplicar Meu ROI Assim Também
+          </CtaButton>
         </div>
       </div>
     </section>
