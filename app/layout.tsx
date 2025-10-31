@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Manrope } from "next/font/google"
-import { Analytics } from "@vercel/analytics/react"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { SiteHeader } from "@/components/site-header"
@@ -32,7 +31,6 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
             <SiteHeader />
             <main>{children}</main>
-            <Analytics />
           </ThemeProvider>
         </GTMProvider>
       </body>

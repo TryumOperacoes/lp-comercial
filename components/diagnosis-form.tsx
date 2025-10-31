@@ -96,7 +96,8 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
 
       if (!response.ok) {
         const errorBody = await response.json().catch(() => null)
-        const message = errorBody?.error ?? 'Erro ao enviar formulário'
+        const detail = errorBody?.details ? `: ${errorBody.details}` : ''
+        const message = (errorBody?.error ?? 'Erro ao enviar formulário') + detail
         throw new Error(message)
       }
 
@@ -107,7 +108,8 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
       onSuccess?.()
     } catch (error) {
       console.error('Erro ao enviar formulário:', error)
-      alert('Erro ao enviar formulário. Tente novamente.')
+      const message = error instanceof Error ? error.message : 'Erro ao enviar formulário. Tente novamente.'
+      alert(message)
     } finally {
       setIsSubmitting(false)
     }

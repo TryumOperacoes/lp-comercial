@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 export async function POST(request: Request) {
   const payload = await request.json()
 
-  const webhookUrl = process.env.DIAGNOSIS_WEBHOOK_URL ?? process.env.NEXT_PUBLIC_DIAGNOSIS_WEBHOOK_URL
+  const webhookUrl = (process.env.DIAGNOSIS_WEBHOOK_URL ?? process.env.NEXT_PUBLIC_DIAGNOSIS_WEBHOOK_URL)?.trim()
 
   if (!webhookUrl) {
     console.error("Diagnosis webhook URL is not configured. Payload:", payload)
@@ -19,10 +19,18 @@ export async function POST(request: Request) {
       body: JSON.stringify(payload),
     })
 
-    if (!response.ok) {
+    if (!response.ok || response.status >= 400) {
       const errorText = await response.text()
       console.error("Diagnosis webhook responded with error:", response.status, errorText)
-      return NextResponse.json({ error: "Erro ao enviar para o webhook" }, { status: 502 })
+
+      return NextResponse.json(
+        {
+          error: "Erro ao enviar para o webhook",
+          status: response.status,
+          details: errorText,
+        },
+        { status: 502 },
+      )
     }
 
     return NextResponse.json({ success: true })

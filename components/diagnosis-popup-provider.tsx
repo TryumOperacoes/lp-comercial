@@ -28,10 +28,6 @@ export function DiagnosisPopupProvider({ children }: DiagnosisPopupProviderProps
     setIsOpen(true)
   }, [])
 
-  const closePopup = React.useCallback(() => {
-    setIsOpen(false)
-  }, [])
-
   return (
     <DiagnosisPopupContext.Provider value={{ openPopup }}>
       {children}
