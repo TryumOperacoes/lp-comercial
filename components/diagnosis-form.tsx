@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Loader2 } from 'lucide-react'
+import { trackFormSubmission } from '@/lib/gtm'
 
 const diagnosisSchema = z.object({
   name: z.string().min(2, 'Nome deve ter pelo menos 2 caracteres'),
@@ -97,6 +98,9 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
       if (!response.ok) {
         throw new Error('Erro ao enviar formulário')
       }
+
+      // Track form submission in GTM
+      trackFormSubmission(data)
 
       // Success
       onSuccess?.()

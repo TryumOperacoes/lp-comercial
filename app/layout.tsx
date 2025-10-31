@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { SiteHeader } from "@/components/site-header"
+import { GTMProvider } from "@/components/gtm-provider"
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -27,11 +28,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${manrope.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-          <SiteHeader />
-          <main>{children}</main>
-          <Analytics />
-        </ThemeProvider>
+        <GTMProvider>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+            <SiteHeader />
+            <main>{children}</main>
+            <Analytics />
+          </ThemeProvider>
+        </GTMProvider>
       </body>
     </html>
   )
