@@ -4,8 +4,11 @@ import Image from "next/image"
 
 import { CtaButton } from "@/components/ui/cta-button"
 import { GradientRule } from "@/components/ui/gradient-rule"
+import { useDiagnosisPopup } from "@/components/diagnosis-popup-provider"
 
 export function HeroSection() {
+  const { openPopup } = useDiagnosisPopup()
+
   const scrollToNextSection = () => {
     document.getElementById("problem-section")?.scrollIntoView({ behavior: "smooth" })
   }
@@ -46,7 +49,7 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="flex flex-col gap-3 sm:flex-row">
-            <CtaButton className="sm:min-w-[220px]">Quero Crescer Na Ordem Certa</CtaButton>
+            <CtaButton onClick={openPopup} className="sm:min-w-[220px]">Quero Crescer Na Ordem Certa</CtaButton>
             <CtaButton variant="ghost" onClick={scrollToNextSection} className="sm:min-w-[180px]">
               Ver Como Funciona
             </CtaButton>

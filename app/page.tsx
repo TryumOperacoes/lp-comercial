@@ -7,19 +7,22 @@ import { ComparisonSection } from "@/components/sections/comparison-section"
 import { FaqSection } from "@/components/sections/faq-section"
 import { GuaranteeSection } from "@/components/sections/guarantee-section"
 import { Footer } from "@/components/sections/footer"
+import { DiagnosisPopupProvider } from "@/components/diagnosis-popup-provider"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <HeroSection />
-      <ClientLogosSection />
-      <ProblemSection />
-      <SolutionSection />
-      <TestimonialsSection />
-      <ComparisonSection />
-      <FaqSection />
-      <GuaranteeSection />
-      <Footer />
-    </main>
+    <DiagnosisPopupProvider>
+      <main className="min-h-screen">
+        <HeroSection />
+        <ClientLogosSection />
+        <ProblemSection />
+        <SolutionSection />
+        <TestimonialsSection />
+        <ComparisonSection />
+        <FaqSection />
+        <GuaranteeSection />
+        <Footer />
+      </main>
+    </DiagnosisPopupProvider>
   )
 }
