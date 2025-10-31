@@ -92,8 +92,8 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
       // Only send if webhook URL is configured and not the placeholder
       if (!webhookUrl || webhookUrl === 'https://your-webhook-url.com/diagnosis') {
         console.log('Webhook URL not configured, skipping submission. Payload:', payload)
-        // For development/testing, you can uncomment the next line to simulate success
-        // return
+        // Simulate success for development/testing
+        return
       }
 
       const response = await fetch(webhookUrl, {
