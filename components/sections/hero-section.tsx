@@ -15,10 +15,10 @@ export function HeroSection() {
 
   return (
     <section className="relative bg-background">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 py-16 md:px-10 lg:grid lg:min-h-[78vh] lg:grid-cols-[minmax(0,1fr)_480px] lg:items-center lg:gap-24 lg:px-16 lg:py-20">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-5 pb-16 pt-12 md:px-10 md:gap-12 md:pb-20 md:pt-16 lg:grid lg:min-h-[78vh] lg:grid-cols-[minmax(0,1fr)_480px] lg:items-center lg:gap-24 lg:px-16 lg:py-20">
         <div className="flex flex-col">
           {/* Microstrap */}
-          <div className="mb-8 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground md:mb-10">
+          <div className="mb-6 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground md:mb-10">
             <span>Estrutura Comercial</span>
             <span className="text-muted-foreground/60">•</span>
             <span>Processos de Vendas</span>
@@ -28,7 +28,7 @@ export function HeroSection() {
 
           {/* Headline */}
           <div className="max-w-3xl">
-            <h1 className="mb-6 max-w-2xl text-balance text-4xl font-bold leading-[1.05] tracking-tight text-foreground md:text-[44px] lg:text-[48px]">
+            <h1 className="mb-5 text-balance text-[32px] font-bold leading-[1.08] tracking-tight text-foreground md:mb-6 md:max-w-2xl md:text-[44px] lg:text-[48px]">
               <span className="text-foreground">Marketing sem vendas é </span>
               <span className="font-extrabold text-primary">desperdício</span>
               <span className="text-primary">.</span>
@@ -38,10 +38,10 @@ export function HeroSection() {
               <span className="text-primary">.</span>
             </h1>
 
-            <GradientRule className="mb-5 h-[3px] w-[26%]" />
+            <GradientRule className="mb-4 h-[3px] w-[32%]" />
 
             {/* Subheadline */}
-            <p className="mb-7 text-pretty text-base text-muted-foreground md:text-lg">
+            <p className="mb-6 text-pretty text-sm text-muted-foreground md:text-base lg:text-lg">
               Nós entregamos os dois — na ordem certa. Primeiro construímos a estrutura comercial que converte. Depois
               amplificamos com marketing. É assim que empresas crescem sem desperdiçar recursos.
             </p>
@@ -49,8 +49,10 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="flex flex-col gap-3 sm:flex-row">
-            <CtaButton onClick={openPopup} className="sm:min-w-[220px]">Quero Crescer Na Ordem Certa</CtaButton>
-            <CtaButton variant="ghost" onClick={scrollToNextSection} className="sm:min-w-[180px]">
+            <CtaButton onClick={openPopup} className="w-full sm:min-w-[220px] sm:flex-1">
+              Quero Crescer Na Ordem Certa
+            </CtaButton>
+            <CtaButton variant="ghost" onClick={scrollToNextSection} className="w-full sm:min-w-[180px] sm:flex-1">
               Ver Como Funciona
             </CtaButton>
           </div>
