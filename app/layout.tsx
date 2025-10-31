@@ -4,6 +4,7 @@ import { Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { SiteHeader } from "@/components/site-header"
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -27,7 +28,8 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${manrope.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-          {children}
+          <SiteHeader />
+          <main>{children}</main>
           <Analytics />
         </ThemeProvider>
       </body>

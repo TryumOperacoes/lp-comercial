@@ -50,23 +50,6 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Estatísticas */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 text-center">
-          <div>
-            <p className="text-4xl font-extrabold text-primary">⭐ 4.9/5</p>
-            <p className="text-muted-foreground">Avaliação Média</p>
-          </div>
-          <div className="hidden md:block w-px h-12 bg-border" />
-          <div>
-            <p className="text-4xl font-extrabold text-primary">📈 156%</p>
-            <p className="text-muted-foreground">Aumento Médio em Conversão</p>
-          </div>
-          <div className="hidden md:block w-px h-12 bg-border" />
-          <div>
-            <p className="text-4xl font-extrabold text-primary">🎯 92%</p>
-            <p className="text-muted-foreground">Taxa de Retenção de Clientes</p>
-          </div>
-        </div>
       </div>
     </section>
   )

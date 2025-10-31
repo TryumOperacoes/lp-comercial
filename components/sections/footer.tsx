@@ -1,57 +1,50 @@
+import Image from "next/image"
+import Link from "next/link"
+
 export function Footer() {
   return (
     <footer className="bg-neutral-950 text-card-foreground py-16 px-6 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+      <div className="mx-auto flex max-w-7xl flex-col gap-12">
+        <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_280px] md:items-start">
           {/* Coluna 1 - Logo e Tagline */}
-          <div>
-            <h3 className="text-2xl font-extrabold text-primary mb-2">Tryum</h3>
-            <p className="text-muted-foreground italic">Primeiro vendas. Depois marketing.</p>
+          <div className="flex flex-col items-start gap-5">
+            <Image src="/logotryumbranco.png" alt="Tryum" width={210} height={62} className="h-12 w-auto" />
+            <p className="text-sm text-muted-foreground italic">Primeiro vendas. Depois marketing.</p>
+            <p className="max-w-md text-sm text-muted-foreground/80">
+              Estruturamos a fundação comercial antes de escalar marketing, garantindo previsibilidade, eficiência e
+              crescimento sustentável.
+            </p>
           </div>
 
-          {/* Coluna 2 - Links */}
-          <div>
-            <h4 className="font-bold mb-4 text-card-foreground">Links</h4>
+          {/* Contato */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-card-foreground">Contato</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50">
-                  Sobre Nós
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50">
-                  Cases de Sucesso
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50">
-                  Contato
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Coluna 3 - Contato */}
-          <div>
-            <h4 className="font-bold mb-4 text-card-foreground">Contato</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>
-                <a href="mailto:contato@tryum.com.br" className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50">
+                <a
+                  href="mailto:contato@tryum.com.br"
+                  className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50"
+                >
                   contato@tryum.com.br
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/5511999999999" className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50">
+                <a
+                  href="https://wa.me/5511999999999?text=Quero%20falar%20com%20a%20Tryum"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50"
+                >
                   WhatsApp: (11) 99999-9999
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50">
+                <a
+                  href="https://www.linkedin.com/company/tryum"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50"
+                >
                   LinkedIn da Tryum
                 </a>
               </li>
@@ -60,16 +53,22 @@ export function Footer() {
         </div>
 
         {/* Rodapé */}
-        <div className="border-t border-border pt-8 text-center text-muted-foreground text-sm">
+        <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
           <p>
             © 2025 Tryum. Todos os direitos reservados. |
-            <a href="#" className="hover:text-primary transition-colors ml-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50">
+            <Link
+              href="/politica-de-privacidade"
+              className="ml-1 transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50"
+            >
               Política de Privacidade
-            </a>{" "}
+            </Link>{" "}
             |
-            <a href="#" className="hover:text-primary transition-colors ml-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50">
+            <Link
+              href="/termos-de-uso"
+              className="ml-1 transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/50"
+            >
               Termos de Uso
-            </a>
+            </Link>
           </p>
         </div>
       </div>

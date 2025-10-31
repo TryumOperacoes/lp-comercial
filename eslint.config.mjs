@@ -9,7 +9,7 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   {
-    ignores: [".next/**", "node_modules/**", "pnpm-lock.yaml"],
+    ignores: [".next/**", "node_modules/**", "pnpm-lock.yaml", "**/*.config.mjs"],
   },
   {
     files: ["**/*.{ts,tsx,js,jsx}", "**/*.mjs"],
@@ -20,6 +20,13 @@ export default [
       parserOptions: {
         projectService: true,
         ecmaFeatures: { jsx: true },
+      },
+      globals: {
+        window: "readonly",
+        document: "readonly",
+        setTimeout: "readonly",
+        clearTimeout: "readonly",
+        React: "readonly",
       },
     },
     plugins: {
@@ -39,6 +46,8 @@ export default [
       ...jsxA11y.configs.recommended.rules,
       "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
       "no-console": ["warn", { allow: ["warn", "error"] }],
+      "no-undef": "off",
+      "no-unused-vars": "off",
     },
   },
 ];

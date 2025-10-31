@@ -1,5 +1,7 @@
 import { Shield } from "lucide-react"
 
+import { CtaButton } from "@/components/ui/cta-button"
+
 export function GuaranteeSection() {
   return (
     <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-muted">
@@ -28,6 +30,13 @@ export function GuaranteeSection() {
                 <span className="font-bold text-primary">92% dos clientes renovam conosco</span> — não porque
                 precisam, mas porque os resultados se pagam sozinhos.
               </p>
+            </div>
+
+            <div className="mt-10 flex flex-col items-center gap-4 text-center">
+              <p className="text-sm font-medium uppercase tracking-[0.28em] text-muted-foreground">
+                Pronto para testar sem risco?
+              </p>
+              <CtaButton size="lg">Quero ativar a garantia Tryum</CtaButton>
             </div>
           </div>
         </div>

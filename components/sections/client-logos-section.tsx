@@ -1,39 +1,31 @@
+import Image from "next/image"
+
+const logos = [
+  { name: "Akitutes", file: "Akitutes 1.png" },
+  { name: "Micomedicina", file: "micomedicina.png" },
+  { name: "Fungi", file: "Fungi.png" },
+  { name: "Valstark", file: "Valstark.png" },
+  { name: "Xexeu", file: "Xexeu.png" },
+]
+
 export function ClientLogosSection() {
-  // Placeholder logos - substituir com logos reais dos clientes
-  const clients = [
-    "Cliente 1",
-    "Cliente 2",
-    "Cliente 3",
-    "Cliente 4",
-    "Cliente 5",
-    "Cliente 6",
-    "Cliente 7",
-    "Cliente 8",
-  ]
-
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-muted">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12 text-balance">
-          Empresas Que Pararam de Desperdiçar e Começaram a{" "}
-          <span className="text-primary font-extrabold">Crescer</span>
-        </h2>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-          {clients.map((client, index) => (
-            <div
-              key={index}
-              className="bg-card rounded-2xl p-8 flex items-center justify-center h-32 grayscale hover:grayscale-0 transition-all duration-300"
-            >
-              <span className="text-muted-foreground font-semibold text-lg">{client}</span>
-            </div>
-          ))}
-        </div>
-
-        <p className="text-center text-muted-foreground text-lg">
-          Mais de <span className="text-foreground font-bold">50 empresas</span> já construíram crescimento sustentável
-          com a Tryum
-        </p>
+    <section className="bg-muted/50 px-6 py-10 md:px-10 lg:px-16">
+      <div
+        className="mx-auto flex max-w-6xl snap-x snap-mandatory items-center justify-center gap-10 overflow-x-auto pb-4 sm:gap-14 lg:justify-between"
+        aria-label="Logos de clientes Tryum"
+      >
+        {logos.map((client) => (
+          <div key={client.name} className="snap-center shrink-0 grayscale transition hover:grayscale-0">
+            <Image
+              src={`/clientes/${encodeURIComponent(client.file)}`}
+              alt={`Logo de ${client.name}`}
+              width={168}
+              height={52}
+              className="h-10 w-auto md:h-12"
+            />
+          </div>
+        ))}
       </div>
     </section>
   )

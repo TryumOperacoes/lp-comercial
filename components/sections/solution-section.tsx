@@ -1,4 +1,3 @@
-import { CtaButton } from "@/components/ui/cta-button"
 import { Building2, Settings, Rocket } from "lucide-react"
 
 export function SolutionSection() {
@@ -13,7 +12,7 @@ export function SolutionSection() {
         "Treinamos seu time comercial com metodologia validada",
         "Criamos métricas que mostram exatamente onde estão os gargalos",
       ],
-      result: "Taxa de conversão sobe de 2% para 15%+ antes de gastar mais um real em marketing",
+      result: "Clientes costumam sair de 2% para ~12-15% de conversão antes de reinvestir em marketing",
     },
     {
       number: "2",
@@ -25,7 +24,7 @@ export function SolutionSection() {
         "Aumentamos ticket médio através de processos estratégicos",
         "Garantimos previsibilidade de receita",
       ],
-      result: "Ciclo de vendas reduzido em 40%, receita previsível mês a mês",
+      result: "Times reduzem em média 30-40% do ciclo e ganham cadência semanal de previsão",
     },
     {
       number: "3",
@@ -37,7 +36,7 @@ export function SolutionSection() {
         "Marketing alinhado com processo comercial otimizado",
         "Cada lead entra numa máquina que converte",
       ],
-      result: "Cada R$ 1 investido em marketing retorna R$ 4-5 em receita",
+      result: "Com o funil ajustado, campanhas têm retornos observados de 3-4x o investimento",
     },
   ]
 
@@ -55,68 +54,44 @@ export function SolutionSection() {
         </div>
 
         {/* Steps */}
-        <div className="space-y-12 mb-16">
+        <div className="mb-16 grid gap-8 md:gap-10 lg:grid-cols-3 lg:items-stretch">
           {steps.map((step, index) => {
             const Icon = step.icon
             return (
-              <div key={index} className="relative">
-                {/* Connector Line */}
-                {index < steps.length - 1 && (
-                  <div className="absolute left-8 top-32 w-0.5 h-full bg-gradient-to-b from-primary to-transparent hidden md:block" />
-                )}
-
-                <div className="bg-muted rounded-3xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    {/* Icon & Number */}
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-4">
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="text-6xl font-extrabold text-primary/15">{step.number}</div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h3 className="text-sm uppercase tracking-[0.1em] text-muted-foreground font-bold mb-4">
-                        PASSO {step.number}
-                      </h3>
-                      <h4 className="text-3xl md:text-4xl font-bold text-foreground mb-6">{step.title}</h4>
-
-                      <div className="mb-6">
-                        <p className="text-lg font-semibold text-foreground mb-4">O que fazemos:</p>
-                        <ul className="space-y-3">
-                          {step.items.map((item, i) => (
-                            <li key={i} className="flex items-start gap-3">
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0" />
-                              <span className="text-muted-foreground text-lg leading-relaxed">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="bg-card p-6 rounded-2xl border-l-4 border-primary">
-                        <p className="text-sm uppercase tracking-[0.08em] text-muted-foreground font-bold mb-2">
-                          RESULTADO VISÍVEL
-                        </p>
-                        <p className="text-lg font-semibold text-foreground">{step.result}</p>
-                      </div>
-                    </div>
+              <div
+                key={index}
+                className="relative flex h-full flex-col rounded-3xl bg-muted p-6 shadow-[0_18px_45px_rgba(17,65,255,0.08)] md:p-8 lg:p-10"
+              >
+                <div className="mb-6 flex items-center justify-between">
+                  <div className="flex size-14 items-center justify-center rounded-2xl bg-primary text-white">
+                    <Icon className="size-7" />
                   </div>
+                  <div className="text-5xl font-extrabold text-primary/15">{step.number}</div>
+                </div>
+
+                <div className="mb-6">
+                  <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                    Passo {step.number}
+                  </h3>
+                  <h4 className="mt-3 text-2xl font-semibold text-foreground md:text-3xl">{step.title}</h4>
+                </div>
+
+                <div className="mb-6 space-y-3">
+                  {step.items.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3 text-sm text-muted-foreground md:text-base">
+                      <span className="mt-2 inline-flex size-2.5 shrink-0 rounded-full bg-primary" />
+                      <span className="leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-auto rounded-2xl border border-primary/30 bg-card p-5">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80">Resultado visível</p>
+                  <p className="mt-2 text-sm font-medium text-foreground md:text-base">{step.result}</p>
                 </div>
               </div>
             )
           })}
-        </div>
-
-        {/* Frase de Impacto */}
-        <div className="text-center mb-12">
-          <p className="text-3xl md:text-5xl font-extrabold text-foreground mb-2">Construa. Otimize. Amplifique.</p>
-          <p className="text-2xl md:text-4xl font-bold text-primary">Nessa ordem. Sempre.</p>
-        </div>
-
-        {/* CTA */}
-        <div className="flex justify-center">
-          <CtaButton size="lg">Quero Construir Minha Fundação Comercial</CtaButton>
         </div>
       </div>
     </section>
