@@ -119,7 +119,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4" id="diagnosis-form-description">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-3.5 sm:space-y-4" id="diagnosis-form-description">
       <div className="space-y-1.5 sm:space-y-2">
         <label htmlFor="name" className="text-[13px] font-medium text-gray-700 sm:text-sm">
           Nome *
@@ -128,7 +128,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
           id="name"
           {...register('name')}
           placeholder="Seu nome completo"
-          className={errors.name ? 'border-red-500' : ''}
+          className={`h-11 text-sm sm:h-12 sm:text-base ${errors.name ? 'border-red-500' : ''}`}
         />
         {errors.name && (
           <p className="text-sm text-red-500">{errors.name.message}</p>
@@ -144,7 +144,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
           type="email"
           {...register('email')}
           placeholder="seu@email.com"
-          className={errors.email ? 'border-red-500' : ''}
+          className={`h-11 text-sm sm:h-12 sm:text-base ${errors.email ? 'border-red-500' : ''}`}
         />
         {errors.email && (
           <p className="text-sm text-red-500">{errors.email.message}</p>
@@ -159,7 +159,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
           id="phone"
           {...register('phone')}
           placeholder="(11) 99999-9999"
-          className={errors.phone ? 'border-red-500' : ''}
+          className={`h-11 text-sm sm:h-12 sm:text-base ${errors.phone ? 'border-red-500' : ''}`}
         />
         {errors.phone && (
           <p className="text-sm text-red-500">{errors.phone.message}</p>
@@ -174,7 +174,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
           id="company"
           {...register('company')}
           placeholder="Nome da empresa"
-          className={errors.company ? 'border-red-500' : ''}
+          className={`h-11 text-sm sm:h-12 sm:text-base ${errors.company ? 'border-red-500' : ''}`}
         />
         {errors.company && (
           <p className="text-sm text-red-500">{errors.company.message}</p>
@@ -238,7 +238,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         )}
       </Button>
 
-      <p className="mt-3 text-center text-[11px] text-gray-500 sm:mt-4 sm:text-xs">
+      <p className="hidden text-center text-xs text-gray-500 sm:mt-5 sm:block">
         Ao enviar este formulário, você concorda com nossa política de privacidade.
       </p>
     </form>
