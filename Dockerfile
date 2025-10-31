@@ -1,5 +1,5 @@
 # Multi-stage build for optimized production image
-FROM node:18-alpine AS deps
+FROM node:20-alpine AS deps
 WORKDIR /app
 
 # Install dependencies only when needed
@@ -7,7 +7,7 @@ COPY package.json pnpm-lock.yaml* ./
 RUN npm install -g pnpm && pnpm install --frozen-lockfile
 
 # Rebuild the source code only when needed
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Install dependencies
@@ -21,7 +21,7 @@ COPY . .
 RUN pnpm run build
 
 # Production image, copy all the files and run next
-FROM node:18-alpine AS runner
+FROM node:20-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
