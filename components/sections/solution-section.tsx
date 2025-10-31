@@ -1,5 +1,9 @@
-import { CtaButton } from "@/components/ui/cta-button"
+"use client"
+
+import { motion } from "framer-motion"
 import { Building2, Settings, Rocket } from "lucide-react"
+
+import { CtaButton } from "@/components/ui/cta-button"
 
 export function SolutionSection() {
   const steps = [
@@ -41,27 +45,61 @@ export function SolutionSection() {
     },
   ]
 
+  const easing: [number, number, number, number] = [0.25, 1, 0.3, 1]
+  const fadeIn = {
+    hidden: { opacity: 0, y: 32 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easing } },
+  }
+
+  const listParent = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.14, delayChildren: 0.12 } },
+  }
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 36, scale: 0.96 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.7, ease: easing },
+    },
+  }
+
   return (
-    <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-background px-6 py-20 md:px-12 md:py-32 lg:px-24">
+      <div className="mx-auto max-w-7xl">
         {/* Título */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance">
+        <motion.div
+          className="mb-20 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={fadeIn}
+        >
+          <h2 className="mb-6 text-4xl font-bold text-foreground text-balance md:text-6xl">
             A Ordem Que Transforma <span className="text-primary font-extrabold">Desperdício em Receita</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+          <p className="text-xl font-medium text-muted-foreground md:text-2xl">
             Empresas que crescem de verdade seguem esta sequência:
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps */}
-        <div className="mb-16 grid gap-8 md:gap-10 lg:grid-cols-3 lg:items-stretch">
+        <motion.div
+          className="mb-16 grid gap-8 md:gap-10 lg:grid-cols-3 lg:items-stretch"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={listParent}
+        >
           {steps.map((step, index) => {
             const Icon = step.icon
             return (
-              <div
+              <motion.div
                 key={index}
                 className="relative flex h-full flex-col rounded-3xl bg-muted p-6 shadow-[0_18px_45px_rgba(17,65,255,0.08)] md:p-8 lg:p-10"
+                variants={cardVariants}
               >
                 <div className="mb-6 flex items-center justify-between">
                   <div className="flex size-14 items-center justify-center rounded-2xl bg-primary text-white">
@@ -90,23 +128,35 @@ export function SolutionSection() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80">Resultado visível</p>
                   <p className="mt-2 text-sm font-medium text-foreground md:text-base">{step.result}</p>
                 </div>
-              </div>
+              </motion.div>
             )
           })}
-        </div>
+        </motion.div>
         {/* Frase de Impacto */}
-        <div className="text-center mb-12">
-          <p className="text-3xl md:text-5xl font-extrabold text-foreground mb-2">Construa. Otimize. Amplifique.</p>
-          <p className="text-2xl md:text-4xl font-bold text-primary">Nessa ordem. Sempre.</p>
-        </div>
+        <motion.div
+          className="mb-12 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.45 }}
+          variants={fadeIn}
+        >
+          <p className="mb-2 text-3xl font-extrabold text-foreground md:text-5xl">Construa. Otimize. Amplifique.</p>
+          <p className="text-2xl font-bold text-primary md:text-4xl">Nessa ordem. Sempre.</p>
+        </motion.div>
 
         {/* CTA */}
-        <div className="flex justify-center">
+        <motion.div
+          className="flex justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeIn}
+        >
           <CtaButton size="lg" className="w-full max-w-sm text-base sm:w-auto sm:max-w-none">
             Quero Construir Minha Fundação Comercial
           </CtaButton>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
-} 
+}

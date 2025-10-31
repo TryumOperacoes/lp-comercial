@@ -119,9 +119,9 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" id="diagnosis-form-description">
-      <div className="space-y-2">
-        <label htmlFor="name" className="text-sm font-medium text-gray-700">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4" id="diagnosis-form-description">
+      <div className="space-y-1.5 sm:space-y-2">
+        <label htmlFor="name" className="text-[13px] font-medium text-gray-700 sm:text-sm">
           Nome *
         </label>
         <Input
@@ -135,8 +135,8 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         )}
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="email" className="text-sm font-medium text-gray-700">
+      <div className="space-y-1.5 sm:space-y-2">
+        <label htmlFor="email" className="text-[13px] font-medium text-gray-700 sm:text-sm">
           Email *
         </label>
         <Input
@@ -151,8 +151,8 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         )}
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="phone" className="text-sm font-medium text-gray-700">
+      <div className="space-y-1.5 sm:space-y-2">
+        <label htmlFor="phone" className="text-[13px] font-medium text-gray-700 sm:text-sm">
           Telefone *
         </label>
         <Input
@@ -166,8 +166,8 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         )}
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="company" className="text-sm font-medium text-gray-700">
+      <div className="space-y-1.5 sm:space-y-2">
+        <label htmlFor="company" className="text-[13px] font-medium text-gray-700 sm:text-sm">
           Empresa *
         </label>
         <Input
@@ -181,12 +181,12 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         )}
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="segment" className="text-sm font-medium text-gray-700">
+      <div className="space-y-1.5 sm:space-y-2">
+        <label htmlFor="segment" className="text-[13px] font-medium text-gray-700 sm:text-sm">
           Segmento *
         </label>
         <Select value={segmentValue} onValueChange={(value) => setValue('segment', value)}>
-          <SelectTrigger className={`w-full ${errors.segment ? 'border-red-500' : ''}`}>
+          <SelectTrigger className={`h-11 w-full text-sm sm:text-base ${errors.segment ? 'border-red-500' : ''}`}>
             <SelectValue placeholder="Selecione o segmento" />
           </SelectTrigger>
           <SelectContent>
@@ -202,12 +202,12 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         )}
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="companySize" className="text-sm font-medium text-gray-700">
+      <div className="space-y-1.5 sm:space-y-2">
+        <label htmlFor="companySize" className="text-[13px] font-medium text-gray-700 sm:text-sm">
           Tamanho da empresa *
         </label>
         <Select value={companySizeValue} onValueChange={(value) => setValue('companySize', value)}>
-          <SelectTrigger className={`w-full ${errors.companySize ? 'border-red-500' : ''}`}>
+          <SelectTrigger className={`h-11 w-full text-sm sm:text-base ${errors.companySize ? 'border-red-500' : ''}`}>
             <SelectValue placeholder="Selecione o tamanho" />
           </SelectTrigger>
           <SelectContent>
@@ -226,7 +226,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#1141FF] hover:bg-[#0E34CC] text-white font-semibold py-3 rounded-lg transition-colors"
+        className="w-full rounded-lg bg-[#1141FF] py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0E34CC] sm:py-3 sm:text-base"
       >
         {isSubmitting ? (
           <>
@@ -238,7 +238,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         )}
       </Button>
 
-      <p className="text-xs text-gray-500 text-center mt-4">
+      <p className="mt-3 text-center text-[11px] text-gray-500 sm:mt-4 sm:text-xs">
         Ao enviar este formulário, você concorda com nossa política de privacidade.
       </p>
     </form>

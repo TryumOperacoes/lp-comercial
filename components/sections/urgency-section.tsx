@@ -1,7 +1,12 @@
+"use client"
+
 import { CtaButton } from "@/components/ui/cta-button"
 import { Calculator } from "lucide-react"
+import { useDiagnosisPopup } from "@/components/diagnosis-popup-provider"
 
 export function UrgencySection() {
+  const { openPopup } = useDiagnosisPopup()
+
   return (
     <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-background">
       <div className="max-w-5xl mx-auto">
@@ -39,7 +44,7 @@ export function UrgencySection() {
         </div>
 
         <div className="text-center">
-          <CtaButton size="lg" className="mb-4">
+          <CtaButton size="lg" className="mb-4" onClick={openPopup}>
             Chega de Perder Dinheiro — Quero Minha Avaliação Gratuita
           </CtaButton>
           <div className="text-muted-foreground space-y-1">

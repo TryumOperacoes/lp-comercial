@@ -1,7 +1,13 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { CtaButton } from "@/components/ui/cta-button"
 import { X, Check } from "lucide-react"
+import { useDiagnosisPopup } from "@/components/diagnosis-popup-provider"
 
 export function FinalCtaSection() {
+  const { openPopup } = useDiagnosisPopup()
+
   return (
     <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto">
@@ -77,7 +83,7 @@ export function FinalCtaSection() {
             Você decide: continuar jogando dinheiro fora ou construir crescimento de verdade.
           </p>
 
-          <CtaButton variant="secondary" size="lg" className="mb-4 w-full max-w-sm text-base sm:w-auto sm:max-w-none">
+          <CtaButton variant="secondary" size="lg" className="mb-4 w-full max-w-sm text-base sm:w-auto sm:max-w-none" onClick={openPopup}>
             Escolho Crescer de Verdade — Quero Minha Avaliação Gratuita
           </CtaButton>
 

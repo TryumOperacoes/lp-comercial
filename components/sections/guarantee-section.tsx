@@ -1,8 +1,13 @@
+"use client"
+
 import { Shield } from "lucide-react"
 
 import { CtaButton } from "@/components/ui/cta-button"
+import { useDiagnosisPopup } from "@/components/diagnosis-popup-provider"
 
 export function GuaranteeSection() {
+  const { openPopup } = useDiagnosisPopup()
+
   return (
     <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-muted">
       <div className="max-w-4xl mx-auto">
@@ -36,7 +41,7 @@ export function GuaranteeSection() {
               <p className="text-sm font-medium uppercase tracking-[0.28em] text-muted-foreground">
                 Pronto para testar sem risco?
               </p>
-              <CtaButton size="lg">Quero ativar a garantia Tryum</CtaButton>
+              <CtaButton size="lg" onClick={openPopup}>Quero ativar a garantia Tryum</CtaButton>
             </div>
           </div>
         </div>

@@ -1,17 +1,57 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { X, Check } from "lucide-react"
+
 import { CtaButton } from "@/components/ui/cta-button"
+import { useDiagnosisPopup } from "@/components/diagnosis-popup-provider"
 
 export function ComparisonSection() {
-  return (
-    <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-muted">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-16 text-balance">
-          A Matemática É <span className="text-primary font-extrabold">Simples</span> (e Assustadora)
-        </h2>
+  const { openPopup } = useDiagnosisPopup()
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+  const easing: [number, number, number, number] = [0.24, 1, 0.3, 1]
+  const fadeUp = {
+    hidden: { opacity: 0, y: 32 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easing } },
+  }
+
+  const gridParent = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.16, delayChildren: 0.1 } },
+  }
+
+  const cardVariant = {
+    hidden: { opacity: 0, y: 36, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.7, ease: easing },
+    },
+  }
+
+  return (
+    <section className="bg-muted px-6 py-20 md:px-12 md:py-32 lg:px-24">
+      <div className="mx-auto max-w-6xl">
+        <motion.h2
+          className="mb-16 text-center text-4xl font-bold text-foreground text-balance md:text-5xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={fadeUp}
+        >
+          A Matemática É <span className="text-primary font-extrabold">Simples</span> (e Assustadora)
+        </motion.h2>
+
+        <motion.div
+          className="mb-12 grid gap-8 md:grid-cols-2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={gridParent}
+        >
           {/* Sem Estrutura */}
-          <div className="bg-card rounded-3xl p-8 border-2 border-red-200">
+          <motion.div className="rounded-3xl border-2 border-red-200 bg-card p-8" variants={cardVariant}>
             <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
               <X className="w-6 h-6 text-red-500" />
               Sem Estrutura Comercial
@@ -45,10 +85,10 @@ export function ComparisonSection() {
                 <p className="text-2xl font-extrabold text-red-600">💸 PREJUÍZO: R$ 8.000</p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Com Estrutura */}
-          <div className="bg-card rounded-3xl p-8 border-2 border-primary shadow-xl">
+          <motion.div className="rounded-3xl border-2 border-primary bg-card p-8 shadow-xl" variants={cardVariant}>
             <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
               <Check className="w-6 h-6 text-primary" />
               Com Estrutura Comercial (Tryum)
@@ -84,25 +124,37 @@ export function ComparisonSection() {
                 <p className="text-2xl font-extrabold text-green-600">💰 LUCRO: R$ 12.500</p>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Frase de Impacto */}
-        <div className="text-center mb-8">
-          <p className="text-3xl md:text-4xl font-extrabold text-foreground mb-2">
+        <motion.div
+          className="mb-8 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={fadeUp}
+        >
+          <p className="mb-2 text-3xl font-extrabold text-foreground md:text-4xl">
             Mesmos leads. Mesmo investimento. <span className="text-primary">Resultado 20x melhor.</span>
           </p>
-          <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+          <p className="text-xl font-medium text-muted-foreground md:text-2xl">
             A diferença não está no marketing. Está na máquina que recebe e converte.
           </p>
-        </div>
+        </motion.div>
 
         {/* CTA */}
-        <div className="flex justify-center">
-          <CtaButton size="lg" className="w-full max-w-sm text-base sm:w-auto sm:max-w-none">
+        <motion.div
+          className="flex justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeUp}
+        >
+          <CtaButton size="lg" className="w-full max-w-sm text-base sm:w-auto sm:max-w-none" onClick={openPopup}>
             Quero Multiplicar Meu ROI Assim Também
           </CtaButton>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
