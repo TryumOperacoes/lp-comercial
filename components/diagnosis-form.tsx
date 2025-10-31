@@ -87,7 +87,16 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
       }
 
       // Send to webhook (replace with your actual webhook URL)
-      const response = await fetch(process.env.NEXT_PUBLIC_DIAGNOSIS_WEBHOOK_URL || 'https://your-webhook-url.com/diagnosis', {
+      const webhookUrl = process.env.NEXT_PUBLIC_DIAGNOSIS_WEBHOOK_URL || 'https://your-webhook-url.com/diagnosis'
+
+      // Only send if webhook URL is configured and not the placeholder
+      if (!webhookUrl || webhookUrl === 'https://your-webhook-url.com/diagnosis') {
+        console.log('Webhook URL not configured, skipping submission. Payload:', payload)
+        // For development/testing, you can uncomment the next line to simulate success
+        // return
+      }
+
+      const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +122,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" id="diagnosis-form-description">
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-medium text-gray-700">
           Nome *

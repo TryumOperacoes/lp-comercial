@@ -12,7 +12,7 @@ interface DiagnosisPopupProps {
 export function DiagnosisPopup({ open, onOpenChange }: DiagnosisPopupProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] p-0 gap-0">
+      <DialogContent className="sm:max-w-[500px] p-0 gap-0" aria-describedby="diagnosis-form-description">
         <DialogHeader className="px-6 pt-6 pb-4">
           <DialogTitle className="text-2xl font-bold text-center">
             Faça um <span className="text-[#1141FF]">diagnóstico gratuito</span>
