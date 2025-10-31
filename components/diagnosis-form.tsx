@@ -182,11 +182,8 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         <label htmlFor="segment" className="text-sm font-medium text-gray-700">
           Segmento *
         </label>
-        <Select
-          value={segmentValue}
-          onValueChange={(value) => setValue('segment', value)}
-        >
-          <SelectTrigger className={errors.segment ? 'border-red-500' : ''}>
+        <Select value={segmentValue} onValueChange={(value) => setValue('segment', value)}>
+          <SelectTrigger className={`w-full ${errors.segment ? 'border-red-500' : ''}`}>
             <SelectValue placeholder="Selecione o segmento" />
           </SelectTrigger>
           <SelectContent>
@@ -206,11 +203,8 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
         <label htmlFor="companySize" className="text-sm font-medium text-gray-700">
           Tamanho da empresa *
         </label>
-        <Select
-          value={companySizeValue}
-          onValueChange={(value) => setValue('companySize', value)}
-        >
-          <SelectTrigger className={errors.companySize ? 'border-red-500' : ''}>
+        <Select value={companySizeValue} onValueChange={(value) => setValue('companySize', value)}>
+          <SelectTrigger className={`w-full ${errors.companySize ? 'border-red-500' : ''}`}>
             <SelectValue placeholder="Selecione o tamanho" />
           </SelectTrigger>
           <SelectContent>
