@@ -102,7 +102,9 @@ export function SolutionSection() {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <CtaButton size="lg">Quero Construir Minha Fundação Comercial</CtaButton>
+          <CtaButton size="lg" className="w-full max-w-sm text-base sm:w-auto sm:max-w-none">
+            Quero Construir Minha Fundação Comercial
+          </CtaButton>
         </div>
       </div>
     </section>

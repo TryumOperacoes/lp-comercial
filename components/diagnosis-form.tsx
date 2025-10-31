@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
@@ -50,6 +51,7 @@ interface DiagnosisFormProps {
 
 export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
   const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const router = useRouter()
 
   const {
     register,
@@ -106,6 +108,7 @@ export function DiagnosisForm({ onSuccess }: DiagnosisFormProps) {
 
       // Success
       onSuccess?.()
+      router.push('/obrigado')
     } catch (error) {
       console.error('Erro ao enviar formulário:', error)
       const message = error instanceof Error ? error.message : 'Erro ao enviar formulário. Tente novamente.'

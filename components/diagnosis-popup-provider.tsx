@@ -5,6 +5,7 @@ import { DiagnosisPopup } from '@/components/diagnosis-popup'
 
 interface DiagnosisPopupContextType {
   openPopup: () => void
+  closePopup: () => void
 }
 
 const DiagnosisPopupContext = React.createContext<DiagnosisPopupContextType | undefined>(undefined)
@@ -24,12 +25,11 @@ interface DiagnosisPopupProviderProps {
 export function DiagnosisPopupProvider({ children }: DiagnosisPopupProviderProps) {
   const [isOpen, setIsOpen] = React.useState(false)
 
-  const openPopup = React.useCallback(() => {
-    setIsOpen(true)
-  }, [])
+  const openPopup = React.useCallback(() => setIsOpen(true), [])
+  const closePopup = React.useCallback(() => setIsOpen(false), [])
 
   return (
-    <DiagnosisPopupContext.Provider value={{ openPopup }}>
+    <DiagnosisPopupContext.Provider value={{ openPopup, closePopup }}>
       {children}
       <DiagnosisPopup open={isOpen} onOpenChange={setIsOpen} />
     </DiagnosisPopupContext.Provider>
