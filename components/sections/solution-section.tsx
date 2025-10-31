@@ -4,8 +4,11 @@ import { motion } from "framer-motion"
 import { Building2, Settings, Rocket } from "lucide-react"
 
 import { CtaButton } from "@/components/ui/cta-button"
+import { useDiagnosisPopup } from "@/components/diagnosis-popup-provider"
 
 export function SolutionSection() {
+  const { openPopup } = useDiagnosisPopup()
+
   const steps = [
     {
       number: "1",
@@ -152,7 +155,7 @@ export function SolutionSection() {
           viewport={{ once: true, amount: 0.5 }}
           variants={fadeIn}
         >
-          <CtaButton size="lg" className="w-full max-w-sm text-base sm:w-auto sm:max-w-none">
+          <CtaButton size="lg" className="w-full max-w-sm text-base sm:w-auto sm:max-w-none" onClick={openPopup}>
             Quero Construir Minha Fundação Comercial
           </CtaButton>
         </motion.div>

@@ -89,7 +89,7 @@ export function HeroSection() {
           {/* CTAs */}
           <motion.div className="flex flex-col gap-3 sm:flex-row" variants={fadeDelayed}>
             <CtaButton onClick={openPopup} className="w-full sm:min-w-[220px] sm:flex-1">
-              Quero Crescer Na Ordem Certa
+              Diagnóstico Gratuito
             </CtaButton>
             <CtaButton variant="ghost" onClick={scrollToNextSection} className="w-full sm:min-w-[180px] sm:flex-1">
               Ver Como Funciona
